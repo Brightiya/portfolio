@@ -154,7 +154,7 @@ function Hero() {
             </a>
 
             <a
-              href="https://linkedin.com/in/brightiyahen"
+              href="https://www.linkedin.com/in/brightiyahen"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition"
