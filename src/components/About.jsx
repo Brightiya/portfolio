@@ -42,6 +42,35 @@ function About() {
           {/* Left Side */}
           <div>
 
+            {/* Profile Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-10 flex justify-center md:justify-start"
+            >
+
+              <div className="relative">
+
+                {/* Glow */}
+                <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-3xl" />
+
+                {/* Image */}
+                <div className="relative w-64 h-64 rounded-3xl overflow-hidden border border-slate-700 shadow-2xl">
+
+                  <img
+                    src="/profile.jpg"
+                    alt="Bright Iyahen"
+                    className="w-full h-full object-cover"
+                  />
+
+                </div>
+
+              </div>
+
+            </motion.div>
+
             <p className="text-slate-300 leading-8 text-lg">
               I am a Computer Science graduate from the
               University of London with a strong focus on
