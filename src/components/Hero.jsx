@@ -110,7 +110,7 @@ function Hero() {
 
             {/* View CV */}
             <a
-              href="/Bright_newCV.pdf"
+              href="/Bright_newCv.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="border border-blue-500 bg-blue-500/10 hover:bg-blue-500/20 px-8 py-4 rounded-2xl font-semibold transition"
@@ -120,7 +120,7 @@ function Hero() {
 
             {/* Download CV */}
             <a
-              href="/Bright_newCV.pdf"
+              href="/Bright_newCv.pdf"
               download
               className="border border-slate-600 hover:border-blue-400 hover:bg-slate-800 px-8 py-4 rounded-2xl font-semibold transition"
             >
