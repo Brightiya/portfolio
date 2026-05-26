@@ -184,7 +184,7 @@ function Hero() {
           transition={{
             duration: 1,
             y: {
-              duration: 4,
+              duration: 5,
               repeat: Infinity,
               ease: "easeInOut",
             },
