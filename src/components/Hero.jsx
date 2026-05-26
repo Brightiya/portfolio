@@ -13,7 +13,7 @@ function Hero() {
 
       </div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 
         {/* Left Content */}
         <div>
@@ -189,7 +189,14 @@ function Hero() {
               ease: "easeInOut",
             },
           }}
-          className="flex justify-center"
+          className="
+            order-first
+            lg:order-last
+            flex
+            justify-center
+            mb-12
+            lg:mb-0
+          "
         >
 
           <div className="relative">
@@ -201,7 +208,23 @@ function Hero() {
             <div className="absolute -inset-4 rounded-full border border-blue-500/20" />
 
             {/* Profile Image */}
-            <div className="relative w-72 h-72 md:w-[420px] md:h-[420px] rounded-full border border-slate-700 overflow-hidden bg-slate-800 shadow-2xl">
+            <div className="
+              relative
+              w-56
+              h-56
+              sm:w-72
+              sm:h-72
+              md:w-80
+              md:h-80
+              lg:w-[420px]
+              lg:h-[420px]
+              rounded-full
+              border
+              border-slate-700
+              overflow-hidden
+              bg-slate-800
+              shadow-2xl
+            ">
 
               <img
                 src="/profile.jpg"
