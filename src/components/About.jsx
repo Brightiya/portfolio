@@ -9,9 +9,15 @@ function About() {
     "SQL",
     "Docker",
     "OpenAI APIs",
-    "Git",
+    "Git & GitHub",
     "REST APIs",
     "Authentication Systems",
+    "AI Integrations",
+    "Cloud Deployment",
+    "JWT Security",
+    "Database Design",
+    "Blockchain",
+    "Web3",
   ]
 
   return (
@@ -38,26 +44,43 @@ function About() {
 
             <p className="text-slate-300 leading-8 text-lg">
               I am a Computer Science graduate from the
-              University of London with strong interests in backend engineering,
-              artificial intelligence, database systems and scalable cloud infrastructure.
+              University of London with a strong focus on
+              backend engineering, artificial intelligence,
+              scalable systems and modern web technologies.
             </p>
 
             <p className="text-slate-300 leading-8 text-lg mt-6">
-              I enjoy building APIs, authentication systems,
-              AI-powered applications and modern web platforms
+              I specialize in building secure backend APIs,
+              AI-powered applications, authentication systems,
+              database-driven platforms and scalable cloud-based services
               using Python, FastAPI, PostgreSQL and React.
             </p>
 
             <p className="text-slate-300 leading-8 text-lg mt-6">
-              My focus is on writing clean, scalable and maintainable software
-              while continuously improving performance,
-              security and user experience.
+              My projects include AI transcription platforms,
+              decentralized identity systems, blockchain integrations,
+              video processing pipelines and modern full-stack applications
+              designed with performance, scalability and clean architecture in mind.
+            </p>
+
+            <p className="text-slate-300 leading-8 text-lg mt-6">
+              I enjoy solving complex engineering problems,
+              optimizing database performance,
+              designing clean REST APIs and integrating AI technologies
+              into practical real-world applications.
+            </p>
+
+            <p className="text-slate-300 leading-8 text-lg mt-6">
+              Beyond development, I continuously explore
+              emerging technologies in artificial intelligence,
+              distributed systems, cloud infrastructure and Web3 development
+              to build modern software solutions that scale efficiently.
             </p>
 
           </div>
 
           {/* Right Side */}
-          <div className="bg-slate-800 rounded-3xl p-8">
+          <div className="bg-slate-800 rounded-3xl p-8 border border-slate-700">
 
             <h3 className="text-2xl font-bold mb-6">
               Technologies & Skills
@@ -68,12 +91,40 @@ function About() {
               {skills.map((skill) => (
                 <motion.span
                   key={skill}
-                  whileHover={{ scale: 1.08 }}
+                  whileHover={{
+                    scale: 1.08,
+                    y: -2,
+                  }}
                   className="bg-slate-700 hover:bg-blue-600 transition px-4 py-2 rounded-xl"
                 >
                   {skill}
                 </motion.span>
               ))}
+
+            </div>
+
+            {/* Extra Stats */}
+            <div className="mt-10 grid grid-cols-2 gap-4">
+
+              <div className="bg-slate-900 rounded-2xl p-5 text-center">
+                <h4 className="text-3xl font-bold text-blue-400">
+                  Full Stack
+                </h4>
+
+                <p className="text-slate-400 mt-2 text-sm">
+                  Backend & Frontend Development
+                </p>
+              </div>
+
+              <div className="bg-slate-900 rounded-2xl p-5 text-center">
+                <h4 className="text-3xl font-bold text-blue-400">
+                  AI + APIs
+                </h4>
+
+                <p className="text-slate-400 mt-2 text-sm">
+                  Intelligent Application Systems
+                </p>
+              </div>
 
             </div>
 
