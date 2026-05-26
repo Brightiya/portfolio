@@ -1,73 +1,111 @@
 import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const navLinks = [
+    { name: "About", href: "#about" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
+  ]
+
   return (
-    <nav className="sticky top-0 z-50 backdrop-blur-md bg-slate-900/70 border-b border-slate-800">
+    <nav className="sticky top-0 z-50 border-b border-slate-800 bg-slate-900/70 backdrop-blur-xl">
 
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-8 py-5">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-5 flex items-center justify-between">
 
-        <h1 className="text-2xl font-bold">
-          Tony.dev
-        </h1>
+        {/* Logo */}
+        <motion.a
+          href="#"
+          whileHover={{ scale: 1.05 }}
+          className="text-2xl md:text-3xl font-black tracking-tight"
+        >
+          <span className="text-white">
+            Bright
+          </span>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8 text-sm font-medium">
-          <a href="#about" className="hover:text-blue-400 transition">
-            About
+          <span className="text-blue-400">
+            .dev
+          </span>
+        </motion.a>
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-10">
+
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="relative text-slate-300 hover:text-white transition duration-300 group"
+            >
+              {link.name}
+
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-blue-400 transition-all duration-300 group-hover:w-full" />
+            </a>
+          ))}
+
+          {/* CTA Button */}
+          <a
+            href="#contact"
+            className="bg-blue-600 hover:bg-blue-500 transition px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-blue-600/20"
+          >
+            Hire Me
           </a>
 
-          <a href="#projects" className="hover:text-blue-400 transition">
-            Projects
-          </a>
-
-          <a href="#contact" className="hover:text-blue-400 transition">
-            Contact
-          </a>
         </div>
 
-        {/* Mobile Button */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden text-white"
         >
-          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          {menuOpen ? <X size={30} /> : <Menu size={30} />}
         </button>
 
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden px-8 pb-6 flex flex-col gap-4 bg-slate-900 border-t border-slate-800">
+      <AnimatePresence>
 
-          <a
-            href="#about"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-400 transition"
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden border-t border-slate-800 bg-slate-900/95 backdrop-blur-xl"
           >
-            About
-          </a>
 
-          <a
-            href="#projects"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-400 transition"
-          >
-            Projects
-          </a>
+            <div className="px-8 py-8 flex flex-col gap-6">
 
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="hover:text-blue-400 transition"
-          >
-            Contact
-          </a>
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-lg text-slate-300 hover:text-blue-400 transition"
+                >
+                  {link.name}
+                </a>
+              ))}
 
-        </div>
-      )}
+              {/* Mobile CTA */}
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="bg-blue-600 hover:bg-blue-500 transition px-5 py-3 rounded-xl text-center font-semibold mt-2"
+              >
+                Hire Me
+              </a>
+
+            </div>
+
+          </motion.div>
+        )}
+
+      </AnimatePresence>
 
     </nav>
   )
