@@ -121,10 +121,12 @@ function Hero() {
             {/* Download CV */}
             <a
               href="/Bright_newCv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               download
               className="border border-slate-600 hover:border-blue-400 hover:bg-slate-800 px-8 py-4 rounded-2xl font-semibold transition"
             >
-              Download CV
+              Download CV PDF
             </a>
 
             <a
