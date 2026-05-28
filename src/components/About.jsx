@@ -10,6 +10,7 @@ function About() {
     "Django REST framework",
     "PostgreSQL",
     "MySQL",
+    "MongoDB",
     "SQL",
     "SQLAlchemy",
     "Redis",
